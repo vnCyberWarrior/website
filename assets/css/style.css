@@ -1,0 +1,118 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* root */
+:root {
+    /* === Color Palette === */
+    --color-bg: #020812;
+    --color-white: #ffffff;
+    --color-primary: #00F0FF;
+    --color-hover-bg: rgba(255, 255, 255, 0.2);
+
+    /* === Typography === */
+    --font-family-base: 'IBM Plex Mono', monospace;
+    --font-size-base: 16px;
+    --font-size-header: 20px;
+    --font-size-hover: 22px;
+    --text-transform-header: uppercase;
+
+    /* === Spacing === */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 70px;
+    --spacing-xl: 100px;
+    --spacing-fanpage: 75px;
+
+    /* === Border === */
+    --border-radius-btn: 10px;
+    --border-btn: 2px solid var(--color-primary);
+    --border-header: 1px solid var(--color-primary);
+
+    /* === Dimensions === */
+    --header-height: 70px;
+    --logo-size: 55px;
+    --logo-margin-top: 7px;
+    --nav-item-width: 150px;
+    --nav-item-height: 40px;
+    --fanpage-width: 120px;
+    --fanpage-height: 45px;
+}
+
+/* Genaral setting */
+html {
+    background-color: #020812;
+}
+
+/* Header */
+.header {
+    display: flex;
+    height: var(--header-height);
+    width: auto;
+    min-width: max-content;
+    font-size: var(--font-size-header);
+    font-family: var(--font-family-base);
+    text-transform: var(--text-transform-header);
+    align-items: center;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    border-bottom: var(--border-header);
+}
+
+.header .nav {
+    display: flex;
+}
+
+.header .fanpage {
+    padding-right: var(--spacing-fanpage);
+}
+
+.header .cyber_logo img {
+    height: var(--logo-size);
+    width: var(--logo-size);
+    margin-top: var(--logo-margin-top);
+    margin-left: var(--spacing-xl);
+}
+
+.header .nav li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--nav-item-width);
+    height: var(--nav-item-height);
+    margin: 0 var(--spacing-lg);
+}
+
+.header .nav li a {
+    color: var(--color-white);
+    padding: var(--spacing-xs);
+}
+
+.header .nav li a:hover {
+    color: var(--color-primary);
+    font-size: var(--font-size-hover);
+    text-decoration: underline solid var(--color-primary);
+}
+
+.header .fanpage a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--fanpage-width);
+    height: var(--fanpage-height);
+    border: var(--border-btn);
+    border-radius: var(--border-radius-btn);
+    color: var(--color-primary);
+}
+
+.header .fanpage a:hover {
+    background-color: var(--color-hover-bg);
+    transform: scale(1.1);
+}
+
+/* */
