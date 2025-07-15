@@ -1,67 +1,72 @@
 /* Reset CSS */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
 
-/* root */
+/* Root Variables */
 :root {
     /* === Color Palette === */
-    --color-bg: #020812;
-    --color-white: #ffffff;
-    --color-primary: #00F0FF;
-    --color-hover-bg: rgba(255, 255, 255, 0.2);
+    --background-color: #020812;
+    --text-color-white: #ffffff;
+    --accent-color: #00F0FF;
+    --hover-background-overlay: rgba(255, 255, 255, 0.2);
 
     /* === Typography === */
-    --font-family-base: 'IBM Plex Mono', monospace;
-    --font-size-base: 16px;
+    --font-family-default: 'IBM Plex Mono', monospace;
+    --font-size-default: 16px;
     --font-size-header: 20px;
-    --font-size-hover: 22px;
-    --text-transform-header: uppercase;
+    --font-size-hovered: 22px;
+    --text-transform-uppercase: uppercase;
 
     /* === Spacing === */
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 20px;
-    --spacing-lg: 70px;
-    --spacing-xl: 100px;
-    --spacing-fanpage: 75px;
+    --spacing-extra-small: 5px;
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 70px;
+    --spacing-extra-large: 100px;
+    --spacing-header-right: 75px;
 
     /* === Border === */
-    --border-radius-btn: 10px;
-    --border-btn: 2px solid var(--color-primary);
-    --border-header: 1px solid var(--color-primary);
+    --button-border-radius: 10px;
+    --button-border: 2px solid var(--accent-color);
+    --header-border: 1px solid var(--accent-color);
 
     /* === Dimensions === */
     --header-height: 70px;
-    --logo-size: 55px;
+    --logo-dimension: 55px;
     --logo-margin-top: 7px;
     --nav-item-width: 150px;
     --nav-item-height: 40px;
-    --fanpage-width: 120px;
-    --fanpage-height: 45px;
+    --button-fanpage-width: 120px;
+    --button-fanpage-height: 45px;
 }
 
-/* Genaral setting */
+/* General setting */
 html {
-    background-color: #020812;
+    background-color: var(--background-color);
 }
 
 /* Header */
 .header {
+    position: sticky;
+    top: 0;
     display: flex;
     height: var(--header-height);
     width: auto;
     min-width: max-content;
     font-size: var(--font-size-header);
-    font-family: var(--font-family-base);
-    text-transform: var(--text-transform-header);
+    font-family: var(--font-family-default);
+    text-transform: var(--text-transform-uppercase);
     align-items: center;
     justify-content: space-between;
     text-wrap: nowrap;
-    border-bottom: var(--border-header);
+    background-color: black;
+    backdrop-filter: blur(10px);   
+    border-bottom: var(--header-border);
+    margin-bottom: 50px;
 }
 
 .header .nav {
@@ -69,14 +74,14 @@ html {
 }
 
 .header .fanpage {
-    padding-right: var(--spacing-fanpage);
+    padding-right: var(--spacing-header-right);
 }
 
 .header .cyber_logo img {
-    height: var(--logo-size);
-    width: var(--logo-size);
+    height: var(--logo-dimension);
+    width: var(--logo-dimension);
     margin-top: var(--logo-margin-top);
-    margin-left: var(--spacing-xl);
+    margin-left: var(--spacing-extra-large);
 }
 
 .header .nav li {
@@ -85,34 +90,133 @@ html {
     align-items: center;
     min-width: var(--nav-item-width);
     height: var(--nav-item-height);
-    margin: 0 var(--spacing-lg);
+    margin: 0 var(--spacing-large);
 }
 
 .header .nav li a {
-    color: var(--color-white);
-    padding: var(--spacing-xs);
+    color: var(--text-color-white);
+    padding: var(--spacing-extra-small);
 }
 
 .header .nav li a:hover {
-    color: var(--color-primary);
-    font-size: var(--font-size-hover);
-    text-decoration: underline solid var(--color-primary);
+    color: var(--accent-color);
+    font-size: var(--font-size-hovered);
+    text-decoration: underline solid var(--accent-color);
 }
 
 .header .fanpage a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: var(--fanpage-width);
-    height: var(--fanpage-height);
-    border: var(--border-btn);
-    border-radius: var(--border-radius-btn);
-    color: var(--color-primary);
+    width: var(--button-fanpage-width);
+    height: var(--button-fanpage-height);
+    border: var(--button-border);
+    border-radius: var(--button-border-radius);
+    color: var(--accent-color);
 }
 
 .header .fanpage a:hover {
-    background-color: var(--color-hover-bg);
+    background-color: var(--hover-background-overlay);
     transform: scale(1.1);
 }
 
-/* */
+/* main */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* slider */
+.main .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.main .slider .img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .slider .img1 img {
+    width: 999px;
+}
+
+.main .slider .brand strong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 90px;
+    text-wrap: nowrap;
+    color: var(--accent-color);
+}
+
+/* section */
+.link_fanpage {
+    color: var(--accent-color);
+}
+
+.first-line {
+    display: block;
+    padding-top: 20px;
+}
+
+.last-line {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.main .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Fira Code', monospace;
+    max-width: 1600px;
+    font-size: 30px;
+    color: #00FF00;
+}
+
+.main .section .tab {
+    display: inline-block;
+    padding-right: 40px;
+}
+
+.main .section .special-tab {
+    display: inline-block;
+    min-width: 250px;
+    text-align: left;
+    margin-right: 10px;
+    color: #00FF00;
+}
+
+.main .section .terminal-box {
+    width: 1600px;
+    border: 1px solid #00FF00;
+}
+
+.main .section .content {
+    width: 1600px;
+    margin-bottom: 40px;
+}
+
+.main .section .content .warning  { color: #FFA500; }
+.main .section .content .alert    { color: #FF5555; }
+.main .section .content .success  { color: #66FF66; }
+.main .section .content .analysis { color: #00FFFF; }
+.main .section .content .brand    { color: var(--accent-color); }
+.main .section .content .folder   { color: #0000FF; }
+
+.main .section .terminal-box .first-line {
+    margin-top: 0px;
+}
+
+.main .section .terminal-box .last-line {
+    margin-top: 0px;
+}
